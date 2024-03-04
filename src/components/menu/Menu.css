@@ -1,0 +1,18 @@
+.menu {
+  flex: 1;
+  background-color: #202020;
+  height: 100vh;
+  color: white;
+}
+
+.items {
+  padding: 18px 26px;
+}
+
+.item {
+  cursor: pointer;
+}
+
+.link {
+  text-decoration: none;
+}
