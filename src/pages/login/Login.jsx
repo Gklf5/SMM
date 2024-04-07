@@ -7,7 +7,21 @@ const Login = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [userType, setUserType] = useState("");
   const dispatch = useDispatch();
+  const handleSignup = async (e) => {
+    e.preventDefault();
+    const type = userType === "creator";
+    try {
+      const res = await axios.post("auth/signup", {
+        name,
+        email,
+        password,
+        type,
+      });
+      console.log(res.data);
+    } catch (err) {}
+  };
   const handleLogin = async (e) => {
     e.preventDefault();
     dispatch(loginStart());
@@ -54,7 +68,16 @@ const Login = () => {
           className="input-field"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button className="sign-btn">Signup</button>
+        <select
+          className="input-field"
+          onChange={(e) => setUserType(e.target.value)}
+        >
+          <option value="creator">Creator</option>
+          <option value="editor">Editor</option>
+        </select>
+        <button className="sign-btn" onClick={handleSignup}>
+          Signup
+        </button>
       </div>
     </div>
   );
