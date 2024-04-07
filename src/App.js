@@ -7,6 +7,7 @@ import Home from "./pages/home/Home";
 import Post from "./pages/post/Post";
 import Profile from "./pages/profile/Profile";
 import Projects from "./pages/projects/Projects";
+import AddProject from "./pages/Addproject/AddProject";
 const App = () => {
   return (
     <div className="main">
@@ -20,6 +21,7 @@ const App = () => {
               <Route path="/post" element={<Post />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/projects" element={<Projects />} />
+              <Route path="/addproject" element={<AddProject />} />
             </Route>
           </Routes>
         </div>

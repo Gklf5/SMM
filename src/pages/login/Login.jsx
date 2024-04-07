@@ -11,13 +11,12 @@ const Login = () => {
   const dispatch = useDispatch();
   const handleSignup = async (e) => {
     e.preventDefault();
-    const type = userType === "creator";
     try {
       const res = await axios.post("auth/signup", {
         name,
         email,
         password,
-        type,
+        role: userType,
       });
       console.log(res.data);
     } catch (err) {}

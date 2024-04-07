@@ -18,8 +18,8 @@ const Menu = () => {
         <Link to="/" className="link">
           <p className="item">Home</p>
         </Link>
-        <Link to="/post" className="link">
-          <p className="item">Post</p>
+        <Link to="/addproject" className="link">
+          <p className="item">AddProject</p>
         </Link>
         <Link to="/profile" className="link">
           <p className="item">Profile</p>
