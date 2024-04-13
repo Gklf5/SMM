@@ -7,7 +7,7 @@ const Login = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [userType, setUserType] = useState("");
+  const [role, setRole] = useState("");
   const dispatch = useDispatch();
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -16,7 +16,7 @@ const Login = () => {
         name,
         email,
         password,
-        role: userType,
+        role,
       });
       console.log(res.data);
     } catch (err) {}
@@ -69,7 +69,7 @@ const Login = () => {
         />
         <select
           className="input-field"
-          onChange={(e) => setUserType(e.target.value)}
+          onChange={(e) => setRole(e.target.value)}
         >
           <option value="creator">Creator</option>
           <option value="editor">Editor</option>
