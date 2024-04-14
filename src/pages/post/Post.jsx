@@ -20,7 +20,7 @@ const Post = () => {
   return (
     <div className="post-main">
       <div className="post-content">
-        <h1 className="title">Video</h1>
+        <h1 className="title">Videos</h1>
         <input
           placeholder="title"
           className="input-field"
