@@ -17,6 +17,12 @@ import "./Menu.css"; // Import CSS styles
 
 const Menu = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
+  const dispatch = useDispatch();
+  const handleLogout = (e) => {
+    e.preventDefault();
+    dispatch(logout());
+    console.log("log out success");
+  };
 
   return (
     <div className="sidenav">
@@ -67,6 +73,13 @@ const Menu = () => {
           <AccountCircleIcon />
           <span>Profile</span>
         </Link>
+        {currentUser ? (
+          <div className="sidenav__button">
+            <span onClick={handleLogout}>LogOut</span>
+          </div>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );
