@@ -27,6 +27,12 @@ const AddProject = () => {
     }
   };
 
+  const handleAddFiles = (e) => {
+    const files = e.target.files;
+    // Handle uploading files here
+    console.log("Files selected:", files);
+  };
+
   return (
     <div className="add-project-main">
       <div className="add-project-content">
@@ -65,8 +71,18 @@ const AddProject = () => {
             className="add-project-input-field"
             value={dueDate}
             onChange={(e) => setDueDate(e.target.value)}
+            placeholder=""
           />
         </div>
+        <input
+          type="file"
+          id="files"
+          style={{ display: "none" }}
+          onChange={handleAddFiles}
+        />
+        <label htmlFor="files" className="add-files-btn">
+          Add Files
+        </label>
         <button className="add-project-btn" onClick={handlePost}>
           Post
         </button>
