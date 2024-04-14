@@ -9,6 +9,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import FolderIcon from "@mui/icons-material/Folder"; // New icon for projects
 import AccountCircleIcon from "@mui/icons-material/AccountCircle"; // New icon
+import LockIcon from "@mui/icons-material/Lock"; // Icon for login
 import "./Menu.css"; // Import CSS styles
 
 const Menu = () => {
@@ -48,11 +49,15 @@ const Menu = () => {
             <span>{currentUser.username}</span>
           </div>
         ) : (
-          <Link to="/profile" className="sidenav__button"> {/* Changed from "login" to "profile" */}
-            <AccountCircleIcon /> {/* Icon changed to AccountCircleIcon */}
-            <span>Profile</span>
+          <Link to="/login" className="sidenav__button"> {/* Link to the login page */}
+            <LockIcon />
+            <span>Login</span>
           </Link>
         )}
+        <Link to="/profile" className="sidenav__button"> {/* Link to the profile page */}
+          <AccountCircleIcon />
+          <span>Profile</span>
+        </Link>
       </div>
     </div>
   );
