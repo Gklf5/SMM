@@ -1,18 +1,73 @@
-.menu {
-  flex: 1;
-  background-color: #202020;
+/* Menu.css */
+
+.sidenav {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1;
+  background-color: #6b9080ff; /* Viridian background color */
+  color: #f6fff8ff; /* Mint cream text color */
   height: 100vh;
-  color: white;
 }
 
-.items {
-  padding: 18px 26px;
+.app-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 30px; /* Adjusted margin to match sidenav__button */
 }
 
-.item {
-  cursor: pointer;
+.sidenav__logo {
+  width: 120px;
+  margin: 25px;
 }
 
-.link {
+.sidenav__buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidenav__button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: inherit;
+  background: none;
+  border: none;
+  margin: 5px 10px;
+  padding: 10px 15px;
+  border-radius: 15px;
+  width: calc(100% - 20px);
   text-decoration: none;
+}
+
+.sidenav__button:hover {
+  cursor: pointer;
+  background-color: rgba(246, 255, 248, 0.1); /* Lighter transparent mint cream */
+}
+
+.sidenav__button > span {
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.sidenav__more {
+  position: fixed;
+  bottom: 3px;
+}
+
+.logout__button {
+  font-size: 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #f6fff8ff; /* Mint cream text color */
+  background-color: rgba(107, 144, 128, 0.2); /* Semi-transparent viridian */
+  border: none;
+  padding: 10px;
+}
+
+.logout__button:hover {
+  cursor: pointer;
+  background-color: rgba(107, 144, 128, 0.4); /* Darker semi-transparent viridian */
 }
