@@ -50,8 +50,8 @@ const Menu = () => {
         </Link>
         {currentUser ? (
           <div className="sidenav__button">
-            <Avatar>{currentUser.username.charAt(0).toUpperCase()}</Avatar>
-            <span>{currentUser.username}</span>
+            <Avatar>{currentUser.name.charAt(0).toUpperCase()}</Avatar>
+            <span>{currentUser.name}</span>
           </div>
         ) : (
           <Link to="/login" className="sidenav__button">
