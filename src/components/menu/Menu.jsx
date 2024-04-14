@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { logout } from "../../redux/userSlice";
+import { current } from "@reduxjs/toolkit";
 const Menu = () => {
   const dispatch = useDispatch();
   const handleLogout = (e) => {
@@ -18,6 +19,15 @@ const Menu = () => {
         <Link to="/" className="link">
           <p className="item">Home</p>
         </Link>
+        {currentUser && (
+          <Link to="/users" className="link">
+            {currentUser.role === "creator" ? (
+              <p className="item">All editors</p>
+            ) : (
+              <p className="item">All creators</p>
+            )}
+          </Link>
+        )}
         <Link to="/addproject" className="link">
           <p className="item">AddProject</p>
         </Link>
@@ -27,15 +37,15 @@ const Menu = () => {
         <Link to="/projects" className="link">
           <p className="item">Projects</p>
         </Link>
-        {currentUser ? (
-          <p className="item" onClick={handleLogout}>
-            Logout
-          </p>
-        ) : (
-          <Link to="/login" className="link">
+        <Link to="/login" className="link">
+          {currentUser ? (
+            <p className="item" onClick={handleLogout}>
+              Logout
+            </p>
+          ) : (
             <p className="item">Login</p>
-          </Link>
-        )}
+          )}
+        </Link>
       </div>
     </div>
   );

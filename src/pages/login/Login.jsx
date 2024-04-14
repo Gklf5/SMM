@@ -7,7 +7,7 @@ const Login = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("");
+  const [role, setRole] = useState("creator");
   const dispatch = useDispatch();
   const handleSignup = async (e) => {
     e.preventDefault();

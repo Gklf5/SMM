@@ -8,6 +8,8 @@ import Post from "./pages/post/Post";
 import Profile from "./pages/profile/Profile";
 import Projects from "./pages/projects/Projects";
 import AddProject from "./pages/Addproject/AddProject";
+import Users from "./pages/Users/Users.jsx";
+
 const App = () => {
   return (
     <div className="main">
@@ -22,6 +24,7 @@ const App = () => {
               <Route path="/profile" element={<Profile />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/addproject" element={<AddProject />} />
+              <Route path="/users" element={<Users />} />
             </Route>
           </Routes>
         </div>
