@@ -1,0 +1,8 @@
+.project-card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(192, 186, 186);
+  padding: 20px 50px;
+  gap: 10px;
+}

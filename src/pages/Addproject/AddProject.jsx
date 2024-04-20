@@ -1,36 +1,83 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import "./AddProject.css";
-
+import {
+  getStorage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+} from "firebase/storage";
+import app from "../../firebase.js";
 const AddProject = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
   const [projectName, setProjectName] = useState("");
   const [projectDescription, setProjectDescription] = useState("");
   const [budget, setBudget] = useState("");
   const [dueDate, setDueDate] = useState("");
+  const [video, setVideo] = useState(undefined);
+  const [videoUrl, setVideoUrl] = useState("");
+  const [videoper, setVideoper] = useState(0);
+
+  useEffect(() => {
+    const uploadVideo = () => {
+      const storage = getStorage(app);
+      const videoName = new Date().getTime() + video.name;
+      const storageRef = ref(storage, videoName);
+      const uploadTask = uploadBytesResumable(storageRef, video);
+
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {
+          const progress =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          setVideoper(Math.round(progress));
+          console.log("Upload is " + progress + "% done");
+          switch (snapshot.state) {
+            case "paused":
+              console.log("Upload is paused");
+              break;
+            case "running":
+              console.log("Upload is running");
+              break;
+            default:
+              break;
+          }
+        },
+        (error) => {},
+        () => {
+          // Upload completed successfully, now we can get the download URL
+          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+            console.log("File available at", downloadURL);
+            setVideoUrl(downloadURL);
+          });
+        }
+      );
+    };
+    video && uploadVideo();
+  }, [video]);
 
   const handlePost = async (e) => {
     e.preventDefault();
     const project = {
       creator: currentUser.id,
-      projectName,
-      projectDescription,
+      title: projectName,
+      desc: projectDescription,
       budget,
       dueDate,
+      files: videoUrl,
     };
     try {
       const res = await axios.post("project/add", project);
       console.log(res.data);
+      setProjectName("");
+      setProjectDescription("");
+      setBudget("");
+      setDueDate("");
+      setVideo(null);
     } catch (err) {
       console.error("Error posting project:", err);
     }
-  };
-
-  const handleAddFiles = (e) => {
-    const files = e.target.files;
-    // Handle uploading files here
-    console.log("Files selected:", files);
   };
 
   return (
@@ -74,15 +121,22 @@ const AddProject = () => {
             placeholder=""
           />
         </div>
-        <input
-          type="file"
-          id="files"
-          style={{ display: "none" }}
-          onChange={handleAddFiles}
-        />
-        <label htmlFor="files" className="add-files-btn">
-          Add Files
-        </label>
+        {videoper > 0 ? (
+          "Uploading:" + videoper
+        ) : (
+          <>
+            <input
+              type="file"
+              id="files"
+              accept="video/*"
+              style={{ display: "none" }}
+              onChange={(e) => setVideo(e.target.files[0])}
+            />
+            <label htmlFor="files" className="add-files-btn">
+              Add Files
+            </label>
+          </>
+        )}
         <button className="add-project-btn" onClick={handlePost}>
           Post
         </button>
