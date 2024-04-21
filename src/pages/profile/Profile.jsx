@@ -11,10 +11,10 @@ const Profile = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       const res = await axios.get(
-        `users/${currentUser.role === "editor" ? "creator" : "editor"}s`
+        `users/${currentUser.role === "editor" ? "creators" : "editors"}`
       );
       setUsers(res.data);
-      console.log(res);
+      // console.log(res);
     };
     fetchUsers();
   }, [currentUser]);
@@ -23,7 +23,7 @@ const Profile = () => {
       {users &&
         users.map((user) => {
           // console.log(user);
-          return currentUser.role === "editor" ? (
+          return currentUser.role === "creator" ? (
             <EditorCard editor={user} />
           ) : (
             <CreatorCard creator={user} />

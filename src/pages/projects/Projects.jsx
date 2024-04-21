@@ -11,17 +11,23 @@ const Projects = () => {
     const fetchProject = async () => {
       try {
         const res = await axios.get(`project/get/${currentUser.id}`);
-        console.log(res.data);
+        // console.log(res.data);
         setProjects(res.data);
-        currentUser.role === "creator" && setEditors(currentUser.editors);
+        // console.log(currentUser.id);
       } catch (err) {}
     };
+    const fetchEditors = async () => {
+      const res = await axios.get(`users/find/editors/${currentUser._id}`);
+      // console.log(res);
+      setEditors(res.data);
+    };
     fetchProject();
+    fetchEditors();
   }, [currentUser]);
   return (
     <div className="profile">
       {projects.map((project) => (
-        <ProjectCratorCard project={{ project, editors }} />
+        <ProjectCratorCard data={{ project, editors }} />
       ))}
     </div>
   );
