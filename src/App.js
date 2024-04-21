@@ -9,7 +9,7 @@ import Profile from "./pages/profile/Profile";
 import Projects from "./pages/projects/Projects";
 import AddProject from "./pages/Addproject/AddProject";
 import Users from "./pages/Users/Users.jsx";
-
+import UploadPage from "./pages/upload/upload.jsx";
 const App = () => {
   return (
     <div className="main">
@@ -23,6 +23,7 @@ const App = () => {
               <Route path="/post" element={<Post />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/projects" element={<Projects />} />
+              <Route path="/upload" element={<UploadPage />} />
               <Route path="/addproject" element={<AddProject />} />
               <Route path="/users" element={<Users />} />
             </Route>

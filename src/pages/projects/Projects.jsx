@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import "./Project.css";
 import axios from "axios";
 import ProjectCratorCard from "../../components/ProjectCard/ProjectCratorCard";
+import ProjectEditorCard from "../../components/ProjectCard/ProjectEditorCard";
 const Projects = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
   const [projects, setProjects] = useState([]);
@@ -26,9 +27,13 @@ const Projects = () => {
   }, [currentUser]);
   return (
     <div className="profile">
-      {projects.map((project) => (
-        <ProjectCratorCard data={{ project, editors }} />
-      ))}
+      {projects.map((project) =>
+        currentUser.role === "creator" ? (
+          <ProjectCratorCard data={{ project, editors }} />
+        ) : (
+          <ProjectEditorCard project={project} />
+        )
+      )}
     </div>
   );
 };

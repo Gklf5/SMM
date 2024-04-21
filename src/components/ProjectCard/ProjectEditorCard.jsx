@@ -1,6 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const ProjectCratorCard = ({ project }) => {
+const ProjectEditorCard = ({ project }) => {
+  console.log(project);
   const handleDownload = () => {
     window.open(project.files, "_blank");
   };
@@ -24,11 +26,13 @@ const ProjectCratorCard = ({ project }) => {
       <p>Budget: ${project.budget}</p>
       <p>Due Date: {project.dueDate}</p>
       <button onClick={handleDownload}>Download</button>
-      <button onClick={handleUpload}>Upload</button>
+      <Link to="/upload">
+        <button>Upload</button>
+      </Link>
       <button onClick={handleAccept}>Accept</button>
       <button onClick={handleReject}>Reject</button>
     </div>
   );
 };
 
-export default ProjectCratorCard;
+export default ProjectEditorCard;
