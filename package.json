@@ -46,5 +46,9 @@
       "last 1 safari version"
     ]
   },
+<<<<<<< Updated upstream
   "proxy": "http://localhost:8000/api/"
+=======
+  "proxy": "https://localhost:8000//api/"
+>>>>>>> Stashed changes
 }
