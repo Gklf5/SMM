@@ -1,11 +1,17 @@
-import React from "react";
+import { useLocation } from "react-router";
+import Header from "../../components/header/Header";
+import Posts from "../../components/posts/Posts";
+import "./home.css";
 
-const Home = () => {
+export default function Homepage() {
+  const location = useLocation();
+  console.log(location);
   return (
-    <div className="home-main">
-      <h1>Home</h1>
-    </div>
+    <>
+      <Header />
+      <div className="home">
+        <Posts />
+      </div>
+    </>
   );
-};
-
-export default Home;
+}
