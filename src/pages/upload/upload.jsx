@@ -13,6 +13,7 @@ const UploadPage = () => {
   const [videoper, setVideoper] = useState(0);
   const [title, setTitle] = useState(0);
   const [description, setDescription] = useState(0);
+
   useEffect(() => {
     const uploadVideo = () => {
       const storage = getStorage(app);
@@ -54,6 +55,7 @@ const UploadPage = () => {
     if (video) {
       console.log("Uploading video:", videoUrl);
       // Implement upload functionality here
+      //post to youtubeModels
     } else {
       console.log("No video selected");
     }

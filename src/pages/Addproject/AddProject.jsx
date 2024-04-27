@@ -63,9 +63,9 @@ const AddProject = () => {
       creator: currentUser.id,
       title: projectName,
       desc: projectDescription,
+      files: videoUrl,
       budget,
       dueDate,
-      files: videoUrl,
     };
     try {
       const res = await axios.post("project/add", project);
