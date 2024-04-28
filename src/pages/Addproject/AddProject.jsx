@@ -59,6 +59,7 @@ const AddProject = () => {
 
   const handlePost = async (e) => {
     e.preventDefault();
+    console.log("Triggeres");
     const project = {
       creator: currentUser.id,
       title: projectName,

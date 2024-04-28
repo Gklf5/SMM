@@ -1,0 +1,14 @@
+.main {
+  display: flex;
+  flex-direction: row;
+
+  .menu {
+    width: 50px;
+  }
+
+  .content {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+  }
+}
