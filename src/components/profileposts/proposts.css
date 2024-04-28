@@ -1,9 +1,8 @@
-.postsContainer {
-  margin: 10px;
-  margin-left: 210px; /* Adjust as needed */
+.postsContainer1 {
+  margin-top: 100px; /* Adjust as needed */
 }
 
-.posts {
+.posts1 {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Three columns of equal width */
   gap: 20px; /* Gap between grid items */
@@ -12,17 +11,16 @@
 }
 
 /* Adjust styling for each Propost item */
-.Propost {
+.Propost1 {
   width: 100%; /* Full width of grid cell */
 }
 
-.header2{
+.header21{
   font-size: 40px;
-  margin-left: 50px; 
-  margin-bottom: 20px;/* Adjust margin as needed */
+  margin-left: 50px; /* Adjust margin as needed */
 }
 
-.header1 {
+.header11 {
   font-family: "Lora", serif;
   color: #6b9080ff; /* Viridian background color */
 }
