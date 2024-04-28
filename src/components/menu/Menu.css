@@ -1,83 +1,89 @@
-/* Menu.css */
 
 .sidenav {
   position: fixed;
+  left: 0;
+  top: 0;
+  width: 250px; 
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.732); 
+  color: #f6fff8ff; 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  z-index: 1;
-  background-color: #6b9080ff; /* Viridian background color */
-  color: #f6fff8ff; /* Mint cream text color */
-  height: 100vh;
+  transition: width 0.3s; 
+  z-index: 1000;
+}
+
+.minimized {
+  width: 50px; 
+}
+
+.toggle-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+.sidenav__buttons {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .app-name {
   font-size: 24px;
   font-weight: bold;
-  margin: 20px 30px; /* Adjusted margin to match sidenav__button */
+  padding: 20px; 
+  overflow: hidden;
+  white-space: nowrap; 
+  text-overflow: ellipsis;
 }
-
-.sidenav__logo {
-  width: 120px;
-  margin: 25px;
-}
-
-/* .sidenav__buttons {
-  display: flex;
-  flex-direction: column;
-} */
 
 .sidenav__button {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  color: inherit;
-  background: none;
-  border: none;
-  margin: 5px 10px;
-  padding: 10px 15px;
-  border-radius: 15px;
-  width: calc(100% - 20px);
+  padding: 12px 20px;
   text-decoration: none;
+  color: inherit;
+  transition: background-color 0.2s, border-radius 0.2s;
+  border-radius: 4px; 
+}
+
+.sidenav__button svg {
+  font-size: 24px; 
+  margin-right: 10px;
 }
 
 .sidenav__button:hover {
-  cursor: pointer;
-  background-color: rgba(
-    246,
-    255,
-    248,
-    0.1
-  ); /* Lighter transparent mint cream */
+  background-color: rgba(246, 255, 248, 0.2); 
 }
 
-.sidenav__button > span {
-  font-size: 18px;
+.sidenav__button span {
   font-weight: bold;
-  margin-left: 10px;
-}
-
-.sidenav__more {
-  position: fixed;
-  bottom: 3px;
+  display: block; 
 }
 
 .logout__button {
-  font-size: 15px;
-  border-radius: 10px;
-  font-weight: bold;
-  color: #f6fff8ff; /* Mint cream text color */
-  background-color: rgba(107, 144, 128, 0.2); /* Semi-transparent viridian */
+  cursor: pointer;
   border: none;
-  padding: 10px;
+  background: none;
+  color: inherit;
+  padding: 12px 20px;
+  transition: background-color 0.2s;
 }
 
 .logout__button:hover {
-  cursor: pointer;
-  background-color: rgba(
-    107,
-    144,
-    128,
-    0.4
-  ); /* Darker semi-transparent viridian */
+  background-color: rgba(107, 144, 128, 0.3); 
+}
+
+.minimized .sidenav__button span, .minimized .app-name {
+  display: none;
+}
+
+.minimized .toggle-button {
+  padding: 15px;
 }
