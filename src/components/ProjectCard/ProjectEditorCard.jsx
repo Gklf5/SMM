@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ProjectEditorCard = ({ project }) => {
-  console.log(project);
+  // console.log(project);
   const handleDownload = () => {
     window.open(project.files, "_blank");
   };

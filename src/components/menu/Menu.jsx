@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { logout } from "../../redux/userSlice"; 
+import { logout } from "../../redux/userSlice";
 import { Avatar } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import SearchIcon from "@mui/icons-material/Search";
@@ -16,8 +16,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import "./Menu.css";
 
 const Menu = () => {
-  const [isMinimized, setIsMinimized] = useState(true);  
-  const currentUser = useSelector(state => state.user.currentUser);
+  const [isMinimized, setIsMinimized] = useState(true);
+  const currentUser = useSelector((state) => state.user.currentUser);
   const dispatch = useDispatch();
 
   const handleLogout = () => {
@@ -65,7 +65,10 @@ const Menu = () => {
               <AccountCircleIcon />
               <span>Profile</span>
             </Link>
-            <div className="sidenav__button logout__button" onClick={handleLogout}>
+            <div
+              className="sidenav__button logout__button"
+              onClick={handleLogout}
+            >
               <span>Logout</span>
             </div>
           </>

@@ -1,0 +1,25 @@
+.add-social-form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px;
+  align-items: center;
+  form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px;
+    background-color: aliceblue;
+    justify-content: space-around;
+    gap: 10px;
+    .main-form {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    .api-field {
+      display: flex;
+      flex-direction: column;
+    }
+    button {
+    }
+  }
+}

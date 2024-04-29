@@ -1,9 +1,12 @@
-.profile-main {
+.search-main {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
+  font-display: row;
+  gap: 10px;
+  padding: 20px 10px;
 }
-
+/*
 .user-card {
   width: 200px;
   padding: 20px;
@@ -19,13 +22,13 @@
 
 .user-card p {
   margin: 5px 0;
-}
+} */
 
 /* Optional: Add hover effect */
-.user-card:hover {
+/* .user-card:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .main-form {
   align-items: center;
-}
+} */

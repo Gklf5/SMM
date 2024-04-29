@@ -19,8 +19,7 @@ const Search = () => {
     fetchUsers();
   }, [currentUser]);
   return (
-    <div className="Search-main">
-      hello
+    <div className="search-main">
       {users &&
         users.map((user) => {
           // console.log(user);

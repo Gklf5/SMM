@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import "./upload.css";
 import {
   getStorage,
@@ -7,7 +8,9 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import app from "../../firebase.js";
+import axios from "axios";
 const UploadPage = () => {
+  const currentUser = useSelector((state) => state.user.currentUser);
   const [video, setVideo] = useState(undefined);
   const [videoUrl, setVideoUrl] = useState("");
   const [videoper, setVideoper] = useState(0);
@@ -51,9 +54,16 @@ const UploadPage = () => {
     video && uploadVideo();
   }, [video]);
 
-  const handleUpload = () => {
+  const handleUpload = async () => {
     if (video) {
       console.log("Uploading video:", videoUrl);
+      await axios.post("/youtube/", {
+        creator: currentUser.assigned_by,
+        editor: currentUser._id,
+        title,
+        desc: description,
+        videoUrl,
+      });
       // Implement upload functionality here
       //post to youtubeModels
     } else {

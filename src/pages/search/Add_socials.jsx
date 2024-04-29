@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import "./Search.css";
 const AddSocialForm = () => {
   const handleSubmit = (e) => {};
   const [media, setMedia] = useState("");
