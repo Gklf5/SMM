@@ -39,10 +39,10 @@ const Login = () => {
 
   return (
     <div className="login-main">
-      <div className="form-container">
+      <div className="login-content">
         {isLogin ? (
           <div className="login-form">
-            <h1 className="title">Sign in</h1>
+            <h1 className="title">Login</h1>
             <input placeholder="username" className="input-field" onChange={(e) => setName(e.target.value)} />
             <input type="password" placeholder="password" className="input-field" onChange={(e) => setPassword(e.target.value)} />
             <button className="sign-btn" onClick={handleLogin}>Sign in</button>

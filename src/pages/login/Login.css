@@ -1,86 +1,79 @@
 .login-main {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   height: 100vh;
-  background: linear-gradient(to right, #e3f2fd, #90caf9); 
+  background: transparent;
 }
 
-.form-container {
+.login-content {
   display: flex;
-  width: 80%;
-  max-width: 960px;
-  border-radius: 20px; 
-  box-shadow: 0 12px 24px rgba(0,0,0,0.12); 
-  background: white;
-  overflow: hidden;
-}
-
-.login-form, .signup-form {
-  flex: 1;
-  padding: 40px;
-  transition: background-color 0.3s, transform 0.3s;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .title {
-  font-size: 26px;
-  font-weight: 600;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  font-size: 35px;
+  font-weight: bold;
   color: #333;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: color 0.3s;
   text-align: center;
+}
+
+.title:hover {
+  color: #007bff;
 }
 
 .input-field {
   width: 100%;
-  padding: 15px;
-  margin-bottom: 20px;
-  border: 1px solid #b0bec5; 
-  border-radius: 10px;
-  font-size: 16px;
-  transition: border-color 0.2s, box-shadow 0.3s;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: #f2f2f2;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
 }
 
 .input-field:focus {
-  border-color: #42a5f5; 
-  box-shadow: 0 0 8px rgba(66, 165, 245, 0.5);
   outline: none;
+  background-color: #fff;
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.2);
 }
 
 .sign-btn {
   width: 100%;
-  padding: 12px;
-  background-color: #42a5f5; 
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #007bff;
   color: white;
   font-size: 16px;
-  border: none;
-  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: all 0.3s;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 .sign-btn:hover {
-  background-color: #1e88e5;
-  transform: scale(1.05); 
-}
-
-@media (max-width: 768px) {
-  .form-container {
-    flex-direction: column;
-  }
-  .login-form, .signup-form {
-    padding: 30px;
-  }
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.2);
 }
 
 .toggle {
-  color: #42a5f5;
-  cursor: pointer;
   text-align: center;
-  margin-top: 20px;
-  font-weight: 500;
+  color: #007bff;
+  cursor: pointer;
 }
 
 .toggle:hover {
   text-decoration: underline;
-  color: #1e88e5;
 }
