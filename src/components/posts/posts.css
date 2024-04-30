@@ -4,19 +4,19 @@
     display: flex;
     flex-wrap: wrap;
     margin: 20px;
-    margin-left: 206px;
+   
 }
 
 
 .header2 {
 
     font-size: 40px;
-    margin-left: 229px;
-    
+    margin-left: 50px;
+
   }
   .header1 {
     font-family: "Lora", serif;
-    color:  #6b9080ff; /* Viridian background color */
+
     ;
   }
   

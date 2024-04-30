@@ -1,0 +1,28 @@
+
+.headerTitles1 {
+  /* Position at the horizontal center of the header */
+  
+/* Align text center within the container */
+margin-top: 30px;
+    font-family: "Lora", serif;
+    color: black;
+    margin-left: 30px;
+  }
+  
+  /* Styles for the small title (e.g., subtitle) */
+  
+  
+  /* Styles for the large title */
+  .headerTitleLg1 {
+    font-size: 50px;
+    line-height: 1; /* Ensure tight line height for large title */
+  }
+
+  .postDesc1 {
+ 
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1; /* Adjust line height to create space between lines */
+    margin-top: 15px;
+    margin-left: 30px;
+}

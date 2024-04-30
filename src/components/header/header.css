@@ -1,28 +1,33 @@
+/* Styles for the header section */
 .header {
-
+ 
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
 }
 
+/* Styles for the title container within the header */
 .headerTitles {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: center;
+/* Position at the horizontal center of the header */
+
+  text-align: center; /* Align text center within the container */
   font-family: "Lora", serif;
   color: black;
 }
 
-.headerTitleSm {
-  position: absolute;
-  font-size: 20px;
-}
+/* Styles for the small title (e.g., subtitle) */
 
+
+/* Styles for the large title */
 .headerTitleLg {
-  position: absolute;
   font-size: 100px;
+  line-height: 1; /* Ensure tight line height for large title */
 }
 
+/* Styles for the header image */
 .headerImg {
   width: 100%;
-  height: 450px;
-
-  object-fit: cover;
+  height: 100%; /* Fill the entire height of the header */
+  object-fit: cover; /* Maintain aspect ratio and cover the space */
 }
