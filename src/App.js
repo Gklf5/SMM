@@ -13,6 +13,7 @@ import UploadPage from "./pages/upload/upload.jsx";
 import AddSocialForm from "./pages/AddSocials/AddSocials.jsx";
 import UserPage from "./pages/userPage/UserPage.jsx";
 import Search from "./pages/search/Search.jsx";
+import AboutPage from "./pages/AboutPage/AboutPage.jsx"
 const App = () => {
   return (
     <div className="main">
@@ -31,6 +32,7 @@ const App = () => {
               <Route path="/upload" element={<UploadPage />} />
               <Route path="/addproject" element={<AddProject />} />
               <Route path="/search" element={<Search />} />
+              <Route path="/AboutPage" element={<AboutPage />} />
               <Route path="/users" element={<Users />} />
               <Route path="/users/addsocials" element={<AddSocialForm />} />
               <Route path="/test/user" element={<UserPage />} />

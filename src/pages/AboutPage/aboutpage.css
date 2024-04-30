@@ -1,0 +1,40 @@
+/* Styling for Header Container */
+.headerContainer {
+  max-width: 800px;
+  margin: 0 auto; /* Center align the container */
+  padding: 50px 20px; /* Add padding for spacing */
+  text-align: center; /* Center align text within the container */
+}
+
+/* Styling for Large Title */
+.headerTitleLg11 {
+  font-size: 50px;
+  font-weight: 700; /* Use a bold font weight for emphasis */
+  color: #333; /* Dark color for better contrast */
+  margin-bottom: 20px; /* Add space below the large title */
+}
+
+/* Styling for Description Paragraph */
+.postDesc11 {
+  font-size: 18px; /* Adjust font size for readability */
+  line-height: 1.5; /* Increase line height for better readability */
+  color: #666; /* Slightly darker color for text */
+  margin-top: 20px; /* Add space above the paragraph */
+}
+
+/* Additional Styling for Text Container */
+.textContainer {
+  max-width: 600px;
+  margin: 0 auto; /* Center align the text container */
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 768px) {
+  .headerTitleLg11 {
+    font-size: 40px; /* Decrease font size for smaller screens */
+  }
+  
+  .postDesc11 {
+    font-size: 16px; /* Decrease font size for smaller screens */
+  }
+}

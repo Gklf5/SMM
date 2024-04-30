@@ -74,9 +74,9 @@ const Menu = () => {
           </>
         ) : (
           <>
-            <Link to="/about" className="sidenav__button">
+            <Link to="/AboutPage" className="sidenav__button">
               <InfoIcon />
-              <span>About</span>
+              <span>AboutPage</span>
             </Link>
             <Link to="/login" className="sidenav__button">
               <LockIcon />
